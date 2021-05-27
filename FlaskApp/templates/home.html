@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h1>Welcome to the wheel of emotions</h1>
+
+  <p> This tool is able to identify the emotion in a sentence.</p>
+
+  <form action="{{ url_for('home') }}" method="POST">
+      <p> Please enter a sentence : <input type = "text" name = "sentence" /> </p>
+{% endblock content %}
