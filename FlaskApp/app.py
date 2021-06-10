@@ -13,8 +13,7 @@ def home():
 def result():
     if request.method == 'POST':
         sentence = request.form['sentence']
-        # return "<h3> {} </h3>".format(sentence)
-        return render_template('result.html', sentence = sentence)
+        return render_template('result.html', result=sentence)
 
 if __name__ == "__main__":
     app.run(debug=True)
