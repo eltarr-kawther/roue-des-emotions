@@ -1,17 +1,20 @@
 from flask import Flask, render_template, request
-import joblib
+#import joblib
 
-model = joblib.load(r"C:\Users\straw\Desktop\AIS\ProjectPool 2\Roue-des-emotions\Output\Models\nlp_models.pkl")
+#model = joblib.load(r"C:\Users\straw\Desktop\AIS\ProjectPool 2\Roue-des-emotions\Output\Models\nlp_models.pkl")
 
 app = Flask(__name__)
 
-@app.route("/", methods = ['POST', 'GET'])
+@app.route("/")
 def home():
+    return render_template('home.html')
+
+@app.route("/result", methods = ['GET', 'POST'])
+def result():
     if request.method == 'POST':
-        #return render_template('prediction.html')
-        return "<h3>No sailors to display for this query...</h3>"
-    else:
-        return render_template('home.html')
+        sentence = request.form['sentence']
+        # return "<h3> {} </h3>".format(sentence)
+        return render_template('result.html', sentence = sentence)
 
 if __name__ == "__main__":
     app.run(debug=True)
