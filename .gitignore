@@ -3,3 +3,4 @@
 /Data
 test.py
 /.idea
+*/__pycache__

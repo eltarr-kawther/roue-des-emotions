@@ -1,6 +1,4 @@
-import pandas as pd
 import string
-import numpy as np
 
 from nltk import word_tokenize
 from nltk.stem import WordNetLemmatizer
@@ -11,7 +9,7 @@ nltk.download("stopwords")
 nltk.download('punkt')
 nltk.download('wordnet')
 
-class NLPprocess:
+class NLPpreprocess:
     def __init__(self, data):
         self.data = data
         self.lowers = self.normalize()
