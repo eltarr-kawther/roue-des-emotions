@@ -15,10 +15,8 @@ def result():
     if request.method == 'POST':
         sentence = request.form['sentence']
         p_sentence = NLPpreprocess(sentence)
-        #prediction = p_sentence.lemmas
-        prediction = model.predict(p_sentence.lemmas)
-        print(prediction)
-        return render_template('result.html', sentence=sentence)
+        prediction = model.predict([p_sentence.lemmas])[0]
+        return render_template('result.html', prediction=prediction)
 
 if __name__ == "__main__":
     app.run(debug=True)
