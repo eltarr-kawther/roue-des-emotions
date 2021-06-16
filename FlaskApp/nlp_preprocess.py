@@ -5,18 +5,21 @@ from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 
 import nltk
-nltk.download("stopwords")
-nltk.download('punkt')
-nltk.download('wordnet')
 
 class NLPpreprocess:
     def __init__(self, data):
+        self.load_nltk()
         self.data = data
         self.lowers = self.normalize()
         self.tokens = self.tokenize()
         self.clean_tokens = self.stopwords_removal()
         self.lemmas = self.lemmatize()
-    
+
+    def load_nltk(self):
+        nltk.download("stopwords")
+        nltk.download('punkt')
+        nltk.download('wordnet')
+
     def normalize(self):
         lowers = self.data.lower()
         return lowers

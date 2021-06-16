@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import joblib
 from nlp_preprocess import NLPpreprocess
 
-model = joblib.load(r"C:\Users\keltarr\Desktop\Roue des émotions\Output\Models\nlp_models.pkl")
+model = joblib.load(r"C:\Users\straw\Desktop\AIS\ProjectPool 2\Roue-des-emotions\Output\Models\nlp_models.pkl")
 
 app = Flask(__name__)
 
